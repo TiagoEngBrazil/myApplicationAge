@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import com.example.myapplication.databinding.ActivityMainBinding
+import java.util.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -27,6 +28,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun calculate() {
-        Toast.makeText(this, "Tô on!", Toast.LENGTH_SHORT).show()
+
+        val yearOfBirth = binding.textYearOfBirth.toString().toFloat()
+        val calendar = Calendar.getInstance()
+        val currentYear = calendar.get(Calendar.YEAR).toFloat()
+
+        val idade = currentYear - yearOfBirth
+
+        Toast.makeText(this, idade.toString(), Toast.LENGTH_SHORT).show()
     }
 }

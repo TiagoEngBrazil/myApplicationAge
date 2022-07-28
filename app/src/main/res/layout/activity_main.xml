@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@drawable/imageapp">
+    android:background="@drawable/imageapp"
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/text_birth_year"
@@ -22,52 +22,22 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:backgroundTint="#CA2C3B"
-        android:hint="@string/year"
-        android:textStyle="bold"
-        android:textColorHint="#CA2C3B"
         android:id="@+id/text_yearOfBirth"
         android:layout_width="80dp"
         android:layout_height="0dp"
         android:layout_marginStart="22dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="5dp"
+        android:backgroundTint="#CA2C3B"
         android:gravity="center"
+        android:hint="@string/year"
         android:inputType="text"
+        android:textColorHint="#CA2C3B"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@id/text_birth_year"
         app:layout_constraintStart_toStartOf="@id/text_birth_year"
         app:layout_constraintTop_toBottomOf="@id/text_birth_year" />
 
-    <TextView
-        android:id="@+id/text_today_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        android:fontFamily="@font/allan_bold"
-        android:text="@string/today_date"
-        android:textColor="#CA2C3B"
-        android:textSize="33sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_yearOfBirth" />
-
-    <EditText
-        android:id="@+id/text_dayOfBirth"
-        android:layout_width="146dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="15dp"
-        android:backgroundTint="#CA2C3B"
-        android:fontFamily="@font/abel"
-        android:gravity="center"
-        android:hint="@string/date"
-        android:inputType="text"
-        android:textColorHint="#DD2323"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_today_date" />
 
     <Button
         android:id="@+id/button_calculate"
@@ -76,12 +46,12 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="30dp"
+        android:backgroundTint="#C34242"
         android:padding="10dp"
-        android:text="Calcular idade"
+        android:text="Qual é minha idade?"
         android:textSize="25dp"
         android:textStyle="bold"
-        android:backgroundTint="#C34242"
-        app:layout_constraintTop_toBottomOf="@id/text_dayOfBirth"
+        app:layout_constraintTop_toBottomOf="@id/text_yearOfBirth"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

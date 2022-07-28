@@ -4,4 +4,6 @@
     <string name="today_date">Qual a data de hoje?</string>
     <string name="date">dia/mês/ano</string>
     <string name="year">Ano</string>
+    <string name="monthOfBirth">mês</string>
+    <string name="dayOfBirth">dia</string>
 </resources>
