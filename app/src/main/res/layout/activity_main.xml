@@ -11,7 +11,7 @@
         android:id="@+id/text_birth_year"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:fontFamily="@font/allan_bold"
         android:text="@string/year_birth"
         android:textColor="#A81A27"
@@ -21,7 +21,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Spinner
+    <EditText
+        android:backgroundTint="#CA2C3B"
+        android:hint="@string/year"
+        android:textStyle="bold"
+        android:textColorHint="#CA2C3B"
         android:id="@+id/text_yearOfBirth"
         android:layout_width="80dp"
         android:layout_height="0dp"
@@ -34,20 +38,11 @@
         app:layout_constraintStart_toStartOf="@id/text_birth_year"
         app:layout_constraintTop_toBottomOf="@id/text_birth_year" />
 
-    <View
-        android:id="@+id/view_line"
-        android:layout_width="50dp"
-        android:layout_height="1dp"
-        android:background="#CA2C3B"
-        android:backgroundTint="#CA2C3B"
-        app:layout_constraintBottom_toBottomOf="@id/text_yearOfBirth"
-        app:layout_constraintStart_toStartOf="@id/text_yearOfBirth" />
-
     <TextView
         android:id="@+id/text_today_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="56dp"
         android:fontFamily="@font/allan_bold"
         android:text="@string/today_date"
         android:textColor="#CA2C3B"
@@ -55,13 +50,13 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/view_line" />
+        app:layout_constraintTop_toBottomOf="@id/text_yearOfBirth" />
 
     <EditText
         android:id="@+id/text_dayOfBirth"
         android:layout_width="146dp"
         android:layout_height="44dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:backgroundTint="#CA2C3B"
         android:fontFamily="@font/abel"
         android:gravity="center"
@@ -73,5 +68,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_today_date" />
+
+    <Button
+        android:id="@+id/button_calculate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:padding="10dp"
+        android:text="Calcular idade"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:backgroundTint="#C34242"
+        app:layout_constraintTop_toBottomOf="@id/text_dayOfBirth"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

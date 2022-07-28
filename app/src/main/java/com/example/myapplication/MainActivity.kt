@@ -3,6 +3,7 @@ package com.example.myapplication
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import com.example.myapplication.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -14,14 +15,18 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.buttonCalculate.setOnClickListener(this)
 
         supportActionBar?.hide()
     }
 
-    fun calculate() {
+    override fun onClick(v: View) {
+        if (v.id == R.id.button_calculate) {
+            calculate()
+        }
     }
 
-    override fun onClick(v: View) {
-        TODO("Not yet implemented")
+    private fun calculate() {
+        Toast.makeText(this, "Tô on!", Toast.LENGTH_SHORT).show()
     }
 }
