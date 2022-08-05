@@ -1,9 +1,10 @@
 <resources>
     <string name="app_name">Idade</string>
-    <string name="year_birth">Qual o ano do seu nascimento?</string>
+    <string name="year_birth">Digite o ano do seu nascimento?</string>
     <string name="today_date">Qual a data de hoje?</string>
     <string name="date">dia/mês/ano</string>
     <string name="year">Ano</string>
     <string name="monthOfBirth">mês</string>
     <string name="dayOfBirth">dia</string>
+    <string name="my_age">Qual é a idade?</string>
 </resources>
