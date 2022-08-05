@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/imageapp"
+    android:padding="10dp"
     tools:context=".MainActivity">
 
     <TextView
@@ -15,7 +16,7 @@
         android:fontFamily="@font/allan_bold"
         android:text="@string/year_birth"
         android:textColor="#A81A27"
-        android:textSize="35sp"
+        android:textSize="27sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,16 +24,19 @@
 
     <EditText
         android:id="@+id/text_yearOfBirth"
-        android:layout_width="80dp"
+        android:layout_width="70dp"
         android:layout_height="0dp"
         android:layout_marginStart="22dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="5dp"
         android:backgroundTint="#CA2C3B"
         android:gravity="center"
         android:hint="@string/year"
+        android:importantForAutofill="no"
         android:inputType="text"
-        android:textColorHint="#CA2C3B"
+        android:textColor="#A81A27"
+        android:textColorHint="#A81A27"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@id/text_birth_year"
         app:layout_constraintStart_toStartOf="@id/text_birth_year"
@@ -47,11 +51,38 @@
         android:layout_marginTop="30dp"
         android:layout_marginEnd="30dp"
         android:backgroundTint="#C34242"
+        android:inputType="number"
         android:padding="10dp"
-        android:text="Qual é minha idade?"
+        android:text="@string/my_age"
         android:textSize="25dp"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/text_yearOfBirth"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints,SpUsage,TextViewEdits" />
+
+    <TextView
+        android:id="@+id/text_answer1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text=""
+        android:textColor="#A33333"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_calculate" />
+
+    <TextView
+        android:id="@+id/text_answer2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text=""
+        android:textColor="#A33333"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_answer1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
