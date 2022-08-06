@@ -32,10 +32,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    private fun validation1(): Boolean {
-        return (binding.textYearOfBirth.text.toString() != "")
-    }
-
     private fun validation2(): Boolean {
         val calendar = Calendar.getInstance()
         val currentYear = calendar.get(Calendar.YEAR)
@@ -46,15 +42,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     @SuppressLint("SetTextI18n")
     private fun calculate() {
 
-        val yearOfBirth = binding.textYearOfBirth.text.toString().toInt()
+        val yearOfBirth = binding.textYearOfBirth.text.toString().toIntOrNull()
         val calendar = Calendar.getInstance()
         val currentYear = calendar.get(Calendar.YEAR)
         val todayDate = dateFormat.format(calendar.time)
 
-        val age1 = currentYear - yearOfBirth
-        val age2 = currentYear - yearOfBirth - 1
-
-        if (validation1() && validation2()) {
+        if (yearOfBirth != null && validation2()) {
+            val age1 = currentYear - yearOfBirth
+            val age2 = currentYear - yearOfBirth - 1
             if (currentYear == yearOfBirth) {
                 binding.textAnswer1.text =
                     "Quem nasceu em $currentYear ainda não completou 1 ano de vida"
@@ -72,11 +67,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     "Quem nasceu em $yearOfBirth, depois de $todayDate, tem $age2 anos de vida"
             }
 
-        } else if (!validation1()) {
+        } else if (yearOfBirth == null) {
             Toast.makeText(this, "É obrigatório preencher o ano de nascimento!", Toast.LENGTH_SHORT)
                 .show()
             binding.textAnswer1.text = ""
             binding.textAnswer2.text = ""
+            return
         } else if (!validation2()) {
             Toast.makeText(
                 this,
