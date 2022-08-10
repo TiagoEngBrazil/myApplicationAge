@@ -7,4 +7,13 @@
     <string name="monthOfBirth">mês</string>
     <string name="dayOfBirth">dia</string>
     <string name="my_age">Qual é a idade?</string>
+    <string name="type_answer_1">Quem nasceu em %1s ainda não completou 1 ano de vida</string>
+    <string name="empity_string" />
+    <string name="exception_gap_year">O ano de nascimento tem que ser maior que 1900 e menor que %s</string>
+    <string name="exception_year_of_birth">É obrigatório preencher o ano de nascimento!</string>
+    <string name="type_answer_2">Quem nasceu em %1s, antes de %2s ou em %3s, tem 1 ano de vida</string>
+    <string name="type_answer_3">Quem nasceu em %1s, depois de %2s, ainda não completou 1 ano de vida</string>
+    <string name="type_answer_4">Quem nasceu em %1s, antes de %2s ou em %3s, tem %4s anos</string>
+    <string name="type_answer_5">Quem nasceu em %1s, depois de %2s, tem %3s anos</string>
+    <string name="observation">Obs.: Considerando a data de hoje (%s) fornecida pelo aparelho!</string>
 </resources>
