@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     @SuppressLint("SimpleDateFormat")
     private val dateFormat: SimpleDateFormat = SimpleDateFormat("dd/MM")
+    private val dateFormat2: SimpleDateFormat = SimpleDateFormat("dd/MM/yyyy")
 
     private lateinit var binding: ActivityMainBinding
 
@@ -20,6 +21,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val calendar = Calendar.getInstance()
+        val todayDate2 = dateFormat2.format(calendar.time)
+
+        binding.textObservation.text = getString(R.string.observation, todayDate2.toString())
 
         binding.buttonCalculate.setOnClickListener(this)
 
@@ -42,45 +48,49 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     @SuppressLint("SetTextI18n")
     private fun calculate() {
 
+
+
         val yearOfBirth = binding.textYearOfBirth.text.toString().toIntOrNull()
         val calendar = Calendar.getInstance()
         val currentYear = calendar.get(Calendar.YEAR)
         val todayDate = dateFormat.format(calendar.time)
+
 
         if (yearOfBirth != null && validation2()) {
             val age1 = currentYear - yearOfBirth
             val age2 = currentYear - yearOfBirth - 1
             if (currentYear == yearOfBirth) {
                 binding.textAnswer1.text =
-                    "Quem nasceu em $currentYear ainda não completou 1 ano de vida"
-                binding.textAnswer2.text = ""
+                    getString(R.string.type_answer_1, currentYear.toString())
+                binding.textAnswer2.text = getString(R.string.empity_string)
 
             } else if (yearOfBirth == currentYear - 1) {
-                binding.textAnswer1.text =
-                    "Quem nasceu em $yearOfBirth, antes de $todayDate ou em $todayDate, tem 1 ano de vida"
+                binding.textAnswer1.text = getString(R.string.type_answer_2, currentYear.toString(), todayDate.toString(), todayDate.toString())
+
                 binding.textAnswer2.text =
-                    "Quem nasceu em $yearOfBirth, depois de $todayDate, ainda não completou 1 ano de vida"
+                    getString(R.string.type_answer_3, yearOfBirth.toString(), todayDate.toString())
             } else {
                 binding.textAnswer1.text =
-                    "Quem nasceu em $yearOfBirth, antes de $todayDate ou em $todayDate, tem $age1 anos de vida"
+                    getString(R.string.type_answer_4, yearOfBirth.toString(), todayDate.toString(), todayDate.toString(), age1.toString())
                 binding.textAnswer2.text =
-                    "Quem nasceu em $yearOfBirth, depois de $todayDate, tem $age2 anos de vida"
+                    getString(R.string.type_answer_5, yearOfBirth.toString(), todayDate.toString(), age2.toString())
             }
 
         } else if (yearOfBirth == null) {
-            Toast.makeText(this, "É obrigatório preencher o ano de nascimento!", Toast.LENGTH_SHORT)
+            Toast.makeText(this, R.string.exception_year_of_birth, Toast.LENGTH_SHORT)
                 .show()
-            binding.textAnswer1.text = ""
-            binding.textAnswer2.text = ""
+            binding.textAnswer1.text = getString(R.string.empity_string)
+            binding.textAnswer2.text = getString(R.string.empity_string)
             return
         } else if (!validation2()) {
             Toast.makeText(
-                this,
-                "O ano de nascimento tem que ser maior que 1900 e menor que $currentYear",
+                this, getString(R.string.exception_gap_year, currentYear.toString())
+                ,
                 Toast.LENGTH_LONG
             ).show()
-            binding.textAnswer1.text = ""
-            binding.textAnswer2.text = ""
+            binding.textAnswer1.text = getString(R.string.empity_string)
+            binding.textAnswer2.text = getString(R.string.empity_string)
         }
     }
+
 }
